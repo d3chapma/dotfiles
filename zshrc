@@ -8,10 +8,9 @@ compinit
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-source $HOME/.dotfiles/zsh/aliases
-source $HOME/.dotfiles/zsh/functions
-source $HOME/.dotfiles/zsh/prompt
-source $HOME/.dotfiles/zsh/z
+source $HOME/Projects/dotfiles/zsh/aliases
+source $HOME/Projects/dotfiles/zsh/functions
+source $HOME/Projects/dotfiles/zsh/prompt
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/9.3/bin"
 
