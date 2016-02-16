@@ -5,6 +5,10 @@ SAVEHIST=20000
 autoload -U compinit
 compinit
 
+# Disable flow control commands (keeps C-s from freezing everything)
+stty start undef
+stty stop undef
+
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
