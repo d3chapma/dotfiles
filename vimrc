@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " My bundles
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'thoughtbot/vim-rspec'
 
 " Colors
 Plugin 'nanotech/jellybeans.vim'
@@ -44,6 +45,13 @@ augroup END
 " Enable built-in matchit plugin
 runtime macros/matchit.vim
 " ================
+
+let mapleader = ","
+
+map <Leader>t :w<cr>:call RunCurrentSpecFile()<CR>
+map <Leader>s :w<cr>:call RunNearestSpec()<CR>
+map <Leader>l :w<cr>:call RunLastSpec()<CR>
+map <Leader>a :w<cr>:call RunAllSpecs()<CR>
 
 " Note that remapping C-s requires flow control to be disabled
 " (e.g. in .bashrc or .zshrc)
@@ -76,6 +84,9 @@ set lazyredraw " Don't redraw screen when running macros.
 " Use Silver Searcher instead of grep
 set grepprg=ag
 
+" Ignore stuff that can't be opened
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor
+
 " Highlight the status line
 highlight StatusLine ctermfg=blue ctermbg=yellow
 
@@ -90,3 +101,4 @@ let g:ctrlp_use_caching = 0
 
 " Enable MRU for CtrlP
 let g:ctrlp_cmd = 'CtrlP'
+

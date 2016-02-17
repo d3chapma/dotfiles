@@ -30,7 +30,6 @@
   enabled = 1
 [github]
   user = d3chapma
-  token = 9e52aa21e6e619f8f828c70a3c137c7e9284c123
 [merge]
   ff = only
 [fetch]

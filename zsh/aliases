@@ -3,3 +3,7 @@ alias bi='bundle install -j 8'
 alias aliases='vim ~/Projects/dotfiles/zsh/aliases'
 alias vimrc='vim ~/Projects/dotfiles/vimrc'
 
+alias gc='git commit'
+alias gco='git checkout'
+alias gb='git branch'
+alias ga='git add .'
