@@ -34,3 +34,6 @@
   ff = only
 [fetch]
   prune = true
+
+[include]
+  path = ~/.gitpulls

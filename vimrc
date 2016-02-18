@@ -55,8 +55,8 @@ map <Leader>a :w<cr>:call RunAllSpecs()<CR>
 
 " Note that remapping C-s requires flow control to be disabled
 " (e.g. in .bashrc or .zshrc)
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
+map <D-s> <esc>:w<CR>
+imap <D-s> <esc>:w<CR>
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500		" keep 500 lines of command line history
@@ -102,3 +102,12 @@ let g:ctrlp_use_caching = 0
 " Enable MRU for CtrlP
 let g:ctrlp_cmd = 'CtrlP'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Test-running stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Now using thoughtbot/vim-rspec and tpope/dispatch.
+
+let g:rspec_command = "!clear && bin/rspec {spec}"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
