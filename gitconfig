@@ -3,6 +3,7 @@
   email = talk2dc@gmail.com
 [alias]
   co = checkout
+  uncommit = reset --soft HEAD^
 [color]
   diff = auto
   status = auto

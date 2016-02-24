@@ -15,6 +15,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " Colors
 Plugin 'nanotech/jellybeans.vim'
@@ -42,6 +45,8 @@ augroup myfiletypes
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
 augroup END
 
+au FocusLost * silent! wa
+
 " Enable built-in matchit plugin
 runtime macros/matchit.vim
 " ================
@@ -55,8 +60,11 @@ map <Leader>a :w<cr>:call RunAllSpecs()<CR>
 
 " Note that remapping C-s requires flow control to be disabled
 " (e.g. in .bashrc or .zshrc)
-map <D-s> <esc>:w<CR>
-imap <D-s> <esc>:w<CR>
+map <C-s> <esc>:w<CR>:nohl<CR>
+imap <C-s> <esc>:w<CR>:nohl<CR>
+
+map <C-s><C-s> <esc>:wall<CR>:nohl<CR>
+imap <C-s><C-s> <esc>:wall<CR>:nohl<CR>
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500		" keep 500 lines of command line history
@@ -80,6 +88,7 @@ set gdefault " assume the /g flag on :s substitutions to replace all matches in 
 set autoindent " always set autoindenting on
 set bg=light
 set lazyredraw " Don't redraw screen when running macros.
+set hlsearch
 
 " Use Silver Searcher instead of grep
 set grepprg=ag
@@ -88,7 +97,7 @@ set grepprg=ag
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor
 
 " Highlight the status line
-highlight StatusLine ctermfg=blue ctermbg=yellow
+highlight StatusLine ctermfg=White ctermbg=DarkBlue
 
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
@@ -111,3 +120,6 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:rspec_command = "!clear && bin/rspec {spec}"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Mustache abbreviations
+let g:mustache_abbreviations = 1
