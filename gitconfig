@@ -4,6 +4,7 @@
 [alias]
   co = checkout
   uncommit = reset --soft HEAD^
+  grab = read-tree -u -m
 [color]
   diff = auto
   status = auto

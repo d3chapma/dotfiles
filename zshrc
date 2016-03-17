@@ -24,9 +24,6 @@ function dbpull(){
 }
 
 alias rake="noglob rake"
-alias ggpush="ggp"
-alias ggpull="ggl"
-alias dbimport="heroku pg:backups restore 'https://s3.amazonaws.com/d3m-misc/latest.dump' DATABASE_URL"
 alias trash="rmtrash"
 
-export HOST_URL='localhost:3000'
+export HOST_URL='lvh.me:3000'
