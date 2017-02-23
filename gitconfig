@@ -39,3 +39,5 @@
 
 [include]
   path = ~/.gitpulls
+[diff]
+  algorithm = histogram
