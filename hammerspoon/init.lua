@@ -11,29 +11,7 @@ hs.window.animationDuration = 0
 local mash   = {"cmd", "ctrl"}
 local mash_shift = {"cmd", "ctrl", "shift"}
 
--- adjust grid size
-hs.hotkey.bind(mash_shift, '=', function() hs.grid.adjustWidth( 1) end)
-hs.hotkey.bind(mash_shift, '-', function() hs.grid.adjustWidth(-1) end)
-hs.hotkey.bind(mash_shift, ']', function() hs.grid.adjustHeight( 1) end)
-hs.hotkey.bind(mash_shift, '[', function() hs.grid.adjustHeight(-1) end)
-
-hs.hotkey.bind(mash_shift, 'M', hs.grid.maximizeWindow)
-
--- multi monitor
-hs.hotkey.bind(mash_shift, 'N', hs.grid.pushWindowNextScreen)
-hs.hotkey.bind(mash_shift, 'P', hs.grid.pushWindowPrevScreen)
-
--- move windows
-hs.hotkey.bind(mash_shift, 'H', hs.grid.pushWindowLeft)
-hs.hotkey.bind(mash_shift, 'J', hs.grid.pushWindowDown)
-hs.hotkey.bind(mash_shift, 'K', hs.grid.pushWindowUp)
-hs.hotkey.bind(mash_shift, 'L', hs.grid.pushWindowRight)
-
--- resize windows
-hs.hotkey.bind(mash_shift, 'Y', hs.grid.resizeWindowThinner)
-hs.hotkey.bind(mash_shift, 'U', hs.grid.resizeWindowTaller)
-hs.hotkey.bind(mash_shift, 'I', hs.grid.resizeWindowShorter)
-hs.hotkey.bind(mash_shift, 'O', hs.grid.resizeWindowWider)
+hs.hotkey.bind(mash_shift, 'M', hs.grid.show)
 
 -- Launch applications
 hs.hotkey.bind(mash, 'h', function () hs.application.launchOrFocus("Zulip") end)
