@@ -2,8 +2,7 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
-autoload -U compinit
-compinit
+autoload -Uz compinit && compinit
 
 # Disable flow control commands (keeps C-s from freezing everything)
 stty start undef
@@ -27,5 +26,5 @@ export HOST_URL='lvh.me:3000'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-export NVM_DIR="/Users/dc/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -28,6 +28,11 @@ task :install do
     end
   end
 
+  # Handle hammerspoon
+  puts "Linking hammerspoon"
+  system %Q{rm "$HOME/.hammerspoon/init.lua"}
+  system %Q{ln -s "$PWD/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"}
+
   # Handle ssh pubkey on its own
   puts "Linking public ssh key"
   system %Q{rm "$HOME/.ssh/id_dsa.pub"}
@@ -36,10 +41,10 @@ task :install do
   # Need to do this to make vim use RVM's ruby version
   puts "Moving zshenv to zshrc"
   system %Q{sudo mv /etc/zshenv /etc/zshrc}
-  
+
   system %Q{mkdir ~/.tmp}
 end
-  
+
 def replace_file(file)
   system %Q{rm "$HOME/.#{file}"}
   link_file(file)

@@ -7,7 +7,7 @@ alias zshrc='vim ~/Projects/dotfiles/zshrc'
 
 alias ga='git add'
 alias gb='git branch'
-alias gco='git checkout'
+alias gco='git checkout $(git branch | fzf --height 20%)'
 alias gc='git commit -v'
 alias gcm='git checkout master'
 alias gd='git diff'
@@ -22,5 +22,9 @@ alias postdump='aws s3 cp db/staging.dump s3://d3m-misc/latest.dump --acl public
 alias prepdump='rake strip:data && rake password:reset'
 alias ldump='curl -o db/live.dump `heroku pg:backups public-url`'
 alias ndump='heroku pg:backups capture -a teldiod3'
-alias updatedump='ldump && dbresetl && prepdump && dbdump && postdump'
+alias updatedump='prepdump && dbdump && postdump && updatestaging'
+alias updatestaging='heroku pg:backups:restore 'https://s3.amazonaws.com/d3m-misc/latest.dump' -a teldiod3test'
 
+alias sr='rake db:test:prepare && spring rspec'
+
+alias elasticsearch='cd ~/elasticsearch-2.3.3 && ./bin/elasticsearch'
