@@ -5,3 +5,11 @@ function g {
     git status
   fi
 }
+
+function gco() {
+  if [[ $# > 0 ]]; then
+    git checkout $@
+  else
+    git checkout $(git branch | fzf --height 20%)
+  fi
+}
