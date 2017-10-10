@@ -8,11 +8,12 @@ autoload -Uz compinit && compinit
 stty start undef
 stty stop undef
 
+source $HOME/Projects/dotfiles/zsh/git_functions.sh
 source $HOME/Projects/dotfiles/zsh/aliases
 source $HOME/Projects/dotfiles/zsh/functions
 source $HOME/Projects/dotfiles/zsh/prompt
 
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/9.3/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/9.6/bin"
 
 alias gf='git fetch -p'
 function dbpull(){

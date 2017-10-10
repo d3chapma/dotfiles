@@ -75,11 +75,6 @@ local function pom_update_time()
       pom_disable()
       pom_count        = pom_count + 1
       pom_time_left    = pom_period_sec
-    else
-      local zulip = hs.application.find('Zulip')
-      if (zulip ~= nil) then
-        zulip:kill()
-      end
     end
   end
 end
@@ -103,6 +98,11 @@ local function pom_enable()
   elseif pom_timer == nil then
     pom_create_menu()
     pom_timer = hs.timer.new(1, pom_update_menu)
+  end
+
+  local zulip = hs.application.find('Zulip')
+  if (zulip ~= nil) then
+    zulip:kill()
   end
 
   pom_is_active = true
@@ -139,3 +139,5 @@ hs.hotkey.bind(mash_shift, 'u', function() pom_enable() end)
 hs.hotkey.bind(mash_shift, 'i', function() pom_disable() end)
 hs.hotkey.bind(mash_shift, 'y', function() pom_increase() end)
 hs.hotkey.bind(mash_shift, 'o', function() pom_decrease() end)
+
+hs.hotkey.bind({"shift", "ctrl"}, "escape", function() hs.caffeinate.lockScreen() end)

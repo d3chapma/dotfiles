@@ -6,10 +6,13 @@ function g {
   fi
 }
 
-function gco() {
-  if [[ $# > 0 ]]; then
-    git checkout $@
-  else
-    git checkout $(git branch | fzf --height 20%)
-  fi
+bind-git-helper() {
+  local char
+  for c in $@; do
+    eval "fzf-g$c-widget() { local result=\$(g$c | join-lines); zle reset-prompt; LBUFFER+=\$result }"
+    eval "zle -N fzf-g$c-widget"
+    eval "bindkey '^g^$c' fzf-g$c-widget"
+  done
 }
+bind-git-helper f b t r h
+unset -f bind-git-helper
