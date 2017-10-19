@@ -24,6 +24,7 @@ alias rake="noglob rake"
 alias trash="rmtrash"
 
 export HOST_URL='lvh.me:3000'
+export GPG_TTY=$(tty)
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

@@ -19,6 +19,7 @@ hs.hotkey.bind(mash, 'j', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash, 'k', function () hs.application.launchOrFocus("Google Chrome") end)
 hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Sublime Text") end)
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
+hs.hotkey.bind(mash, 'i', function () hs.urlevent.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfqrj8M5UYqm5onzX0wApETs-OGgzwmY1s84FfrlT-pRhdoHw/viewform') end)
 
 -- Pomodoro module
 local pom_period_sec  = 25 * 60
@@ -45,6 +46,7 @@ local function pom_disable()
     if (pom_was_active) then
       pom_timer:stop()
       hs.application.launchOrFocus("Zulip")
+      hs.urlevent.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfqrj8M5UYqm5onzX0wApETs-OGgzwmY1s84FfrlT-pRhdoHw/viewform')
     end
   elseif (pom_disable_count == 1) then
     pom_time_left = pom_period_sec
@@ -135,9 +137,9 @@ end
 -- pom_create_menu()
 -- pom_update_menu()
 
-hs.hotkey.bind(mash_shift, 'u', function() pom_enable() end)
-hs.hotkey.bind(mash_shift, 'i', function() pom_disable() end)
-hs.hotkey.bind(mash_shift, 'y', function() pom_increase() end)
-hs.hotkey.bind(mash_shift, 'o', function() pom_decrease() end)
+hs.hotkey.bind(mash_shift, 'y', function() pom_enable() end)
+hs.hotkey.bind(mash_shift, 'o', function() pom_disable() end)
+hs.hotkey.bind(mash_shift, 'u', function() pom_increase() end)
+hs.hotkey.bind(mash_shift, 'i', function() pom_decrease() end)
 
 hs.hotkey.bind({"shift", "ctrl"}, "escape", function() hs.caffeinate.lockScreen() end)
