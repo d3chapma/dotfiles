@@ -1,7 +1,7 @@
 -- init grid
 hs.grid.MARGINX = 0
 hs.grid.MARGINY = 0
-hs.grid.GRIDWIDTH = 7
+hs.grid.GRIDWIDTH = 5
 hs.grid.GRIDHEIGHT = 3
 
 -- disable animation
@@ -19,11 +19,16 @@ hs.hotkey.bind(mash, 'j', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash, 'k', function () hs.application.launchOrFocus("Google Chrome") end)
 hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Sublime Text") end)
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
-hs.hotkey.bind(mash, 'i', function () hs.urlevent.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfqrj8M5UYqm5onzX0wApETs-OGgzwmY1s84FfrlT-pRhdoHw/viewform') end)
+
+-- Track work using trkr
+local function track_work()
+  hs.application.find('iTerm2'):selectMenuItem({"Profiles", "Tracker"})
+end
+
+hs.hotkey.bind(mash, 'i', function () track_work() end)
 
 -- Pomodoro module
-local pom_period_sec  = 25 * 60
-local pom_count       = 1
+local pom_period_sec       = 25 * 60
 local pom_is_active        = false
 local pom_time_left        = pom_period_sec
 local pom_disable_count    = 0
@@ -32,21 +37,19 @@ local pom_disable_count    = 0
 local function pom_update_display()
   local time_min = math.floor( (pom_time_left / 60))
   local time_sec = pom_time_left - (time_min * 60)
-  local str = string.format ("[%02d:%02d|#%02d]", time_min, time_sec, pom_count)
+  local str = string.format ("[%02d:%02d]", time_min, time_sec)
   pom_menu:setTitle(str)
 end
 
 -- stop the clock
 local function pom_disable()
-  -- disabling pomodoro twice will reset the countdown
+  -- disabling timer twice will reset the countdown
   local pom_was_active = pom_is_active
   pom_is_active = false
 
   if (pom_disable_count == 0) then
     if (pom_was_active) then
       pom_timer:stop()
-      hs.application.launchOrFocus("Zulip")
-      hs.urlevent.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfqrj8M5UYqm5onzX0wApETs-OGgzwmY1s84FfrlT-pRhdoHw/viewform')
     end
   elseif (pom_disable_count == 1) then
     pom_time_left = pom_period_sec
@@ -75,8 +78,9 @@ local function pom_update_time()
 
     if (pom_time_left <= 0 ) then
       pom_disable()
-      pom_count        = pom_count + 1
       pom_time_left    = pom_period_sec
+      hs.application.launchOrFocus("Zulip")
+      track_work()
     end
   end
 end
@@ -112,25 +116,11 @@ local function pom_enable()
 end
 
 local function pom_increase()
-  if (pom_is_active) then
-    pom_time_left = pom_time_left + (5*60)
-  else
-    pom_period_sec = pom_period_sec + (5*60)
-    pom_update_menu()
-  end
+  pom_time_left = pom_time_left + 5 * 60
 end
 
 local function pom_decrease()
-  if (pom_is_active) then
-    if (pom_time_left >= (5*60)) then
-      pom_time_left = pom_time_left - (5*60)
-    end
-  else
-    if (pom_period_sec >= (5*60)) then
-      pom_period_sec = pom_period_sec - (5*60)
-      pom_update_menu()
-    end
-  end
+  pom_time_left = pom_time_left - 5 * 60
 end
 
 -- init pomodoro

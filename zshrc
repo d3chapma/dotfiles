@@ -15,7 +15,6 @@ source $HOME/Projects/dotfiles/zsh/prompt
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/9.6/bin"
 
-alias gf='git fetch -p'
 function dbpull(){
   curl -o latest.dump `heroku pg:backups public-url -a $1`
 }

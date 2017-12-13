@@ -1,6 +1,7 @@
 [user]
   name = David Chapman
   email = talk2dc@gmail.com
+	signingkey = 7FFA1274BDC08C4A
 [alias]
   co = checkout
   uncommit = reset --soft HEAD^

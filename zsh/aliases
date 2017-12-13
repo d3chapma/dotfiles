@@ -11,6 +11,7 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gm='git merge'
 alias gpr='git pull --rebase'
+alias gf='git fetch -p'
 
 alias dbreset='rake db:drop && rake db:create && pg_restore --verbose --host localhost --username dc --clean --no-owner --no-acl --dbname d3m_development db/staging.dump'
 alias dbresetl='rake db:drop && rake db:create && pg_restore --verbose --host localhost --username dc --clean --no-owner --no-acl --dbname d3m_development db/live.dump'
