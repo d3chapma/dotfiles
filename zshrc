@@ -3,6 +3,10 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
 autoload -Uz compinit && compinit
+autoload -U edit-command-line
+
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
 
 # Disable flow control commands (keeps C-s from freezing everything)
 stty start undef
@@ -22,6 +26,7 @@ function dbpull(){
 alias rake="noglob rake"
 alias trash="rmtrash"
 
+export EDITOR='subl -w'
 export HOST_URL='lvh.me:3000'
 export GPG_TTY=$(tty)
 
@@ -29,3 +34,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship

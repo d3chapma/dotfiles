@@ -4,6 +4,7 @@
   grab = read-tree -u -m
   unstage = reset HEAD --
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  pushf = push --force-with-lease
 [color]
   diff = auto
   status = auto
@@ -32,6 +33,7 @@
   user = d3chapma
 [merge]
   ff = only
+  conflictStyle = diff3
 [fetch]
   prune = true
 
