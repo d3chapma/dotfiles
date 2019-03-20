@@ -26,4 +26,4 @@ alias updatestaging='heroku pg:backups:restore 'https://s3.amazonaws.com/d3m-mis
 
 alias sr='rake db:test:prepare && spring rspec'
 
-alias elasticsearch='cd /usr/local/opt/elasticsearch@5.6 && ./bin/elasticsearch'
+alias elasticsearch='cd /usr/local/opt/elasticsearch && ./bin/elasticsearch'
