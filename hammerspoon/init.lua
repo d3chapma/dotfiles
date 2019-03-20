@@ -20,13 +20,6 @@ hs.hotkey.bind(mash, 'k', function () hs.application.launchOrFocus("Google Chrom
 hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Visual Studio Code") end)
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
 
--- Track work using trkr
-local function track_work()
-  hs.application.find('iTerm2'):selectMenuItem({"Profiles", "Tracker"})
-end
-
-hs.hotkey.bind(mash, 'i', function () track_work() end)
-
 -- Pomodoro module
 local pom_period_sec       = 25 * 60
 local pom_is_active        = false
