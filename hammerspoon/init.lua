@@ -21,7 +21,7 @@ hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Visual Studi
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
 
 -- Pomodoro module
-local pom_period_sec       = 25 * 60
+local pom_period_sec       = 20 * 60
 local pom_is_active        = false
 local pom_time_left        = pom_period_sec
 local pom_disable_count    = 0
@@ -71,9 +71,8 @@ local function pom_update_time()
 
     if (pom_time_left <= 0 ) then
       pom_disable()
-      pom_time_left    = pom_period_sec
-      hs.application.launchOrFocus("Zulip")
-      track_work()
+      pom_time_left = pom_period_sec
+      hs.dialog.blockAlert("Time's Up!", "")
     end
   end
 end
@@ -97,11 +96,7 @@ local function pom_enable()
   elseif pom_timer == nil then
     pom_create_menu()
     pom_timer = hs.timer.new(1, pom_update_menu)
-  end
-
-  local zulip = hs.application.find('Zulip')
-  if (zulip ~= nil) then
-    zulip:kill()
+    pom_update_display()
   end
 
   pom_is_active = true
@@ -110,19 +105,21 @@ end
 
 local function pom_increase()
   pom_time_left = pom_time_left + 5 * 60
+  pom_update_display()
 end
 
 local function pom_decrease()
   pom_time_left = pom_time_left - 5 * 60
+  pom_update_display()
 end
 
 -- init pomodoro
 -- pom_create_menu()
 -- pom_update_menu()
 
-hs.hotkey.bind(mash_shift, 'y', function() pom_enable() end)
-hs.hotkey.bind(mash_shift, 'o', function() pom_disable() end)
-hs.hotkey.bind(mash_shift, 'u', function() pom_increase() end)
+hs.hotkey.bind(mash_shift, 'u', function() pom_enable() end)
+hs.hotkey.bind(mash_shift, 'p', function() pom_disable() end)
+hs.hotkey.bind(mash_shift, 'o', function() pom_increase() end)
 hs.hotkey.bind(mash_shift, 'i', function() pom_decrease() end)
 
 hs.hotkey.bind({"shift", "ctrl"}, "escape", function() hs.caffeinate.lockScreen() end)
