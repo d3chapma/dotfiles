@@ -17,7 +17,7 @@ hs.hotkey.bind(mash_shift, 'M', hs.grid.show)
 hs.hotkey.bind(mash, 'h', function () hs.application.launchOrFocus("Zulip") end)
 hs.hotkey.bind(mash, 'j', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash, 'k', function () hs.application.launchOrFocus("Google Chrome") end)
-hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Sublime Text") end)
+hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Visual Studio Code") end)
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
 
 -- Track work using trkr
