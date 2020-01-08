@@ -1,6 +1,7 @@
 alias be='bundle exec'
 alias bi='bundle install -j 8'
-alias dotfiles='code ~/Projects/dotfiles'
+alias dotfiles='subl ~/Projects/dotfiles'
+alias ds='docker start'
 
 alias ga='git add'
 alias gb='git branch'

@@ -14,10 +14,9 @@ local mash_shift = {"cmd", "ctrl", "shift"}
 hs.hotkey.bind(mash_shift, 'M', hs.grid.show)
 
 -- Launch applications
-hs.hotkey.bind(mash, 'h', function () hs.application.launchOrFocus("Zulip") end)
 hs.hotkey.bind(mash, 'j', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash, 'k', function () hs.application.launchOrFocus("Google Chrome") end)
-hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Visual Studio Code") end)
+hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Sublime Text") end)
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
 
 -- Pomodoro module
@@ -122,4 +121,31 @@ hs.hotkey.bind(mash_shift, 'p', function() pom_disable() end)
 hs.hotkey.bind(mash_shift, 'o', function() pom_increase() end)
 hs.hotkey.bind(mash_shift, 'i', function() pom_decrease() end)
 
-hs.hotkey.bind({"shift", "ctrl"}, "escape", function() hs.caffeinate.lockScreen() end)
+local function paste_password()
+  hs.eventtap.keyStrokes("Password12345678"):start()
+end
+
+
+local function paste_proxy_host()
+  hs.eventtap.keyStrokes("PROXY_HOST=dev.smc:5000 "):start()
+end
+
+hs.hotkey.bind(mash_shift, 'y', function() paste_password() end)
+hs.hotkey.bind(mash_shift, 'h', function() paste_proxy_host() end)
+
+myKeyStroke = function(modifiers, character)
+    local event = require("hs.eventtap").event
+    event.newKeyEvent(modifiers, string.lower(character), true):post()
+    event.newKeyEvent(modifiers, string.lower(character), false):post()
+end
+
+local function forward_word()
+  myKeyStroke({"alt"}, "Right")
+end
+
+local function backward_word()
+  myKeyStroke({"alt"}, "Left")
+end
+
+hs.hotkey.bind({"alt"}, 'f', function() forward_word() end)
+hs.hotkey.bind({"alt"}, 'b', function() backward_word() end)
