@@ -10,14 +10,30 @@ hs.window.animationDuration = 0
 -- hotkey mash
 local mash   = {"cmd", "ctrl"}
 local mash_shift = {"cmd", "ctrl", "shift"}
+local editor_switch = 0
 
 hs.hotkey.bind(mash_shift, 'M', hs.grid.show)
 
 -- Launch applications
 hs.hotkey.bind(mash, 'j', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash, 'k', function () hs.application.launchOrFocus("Google Chrome") end)
-hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Sublime Text") end)
+hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Visual Studio Code") end)
 hs.hotkey.bind(mash, 'u', function () hs.application.launchOrFocus("Spotify") end)
+
+
+-- editor switch
+local function update_editor_binding()
+  editor_switch = (editor_switch * -1) + 1
+
+  if (editor_switch == 0) then
+    hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Visual Studio Code") end)
+  elseif (editor_switch == 1) then
+    hs.hotkey.bind(mash, 'l', function () hs.application.launchOrFocus("Sublime Text") end)
+  end
+end
+
+hs.hotkey.bind(mash, 'm', function() update_editor_binding() end)
+
 
 -- Pomodoro module
 local pom_period_sec       = 20 * 60
