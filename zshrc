@@ -19,6 +19,7 @@ source $HOME/Personal/dotfiles/zsh/go.sh
 source $HOME/Personal/dotfiles/zsh/functions_git.sh
 source $HOME/Personal/dotfiles/zsh/aliases_d3m.sh
 source $HOME/Personal/dotfiles/zsh/aliases_git.sh
+source $HOME/Personal/dotfiles/zsh/aliases_vpn.sh
 source $HOME/Personal/dotfiles/zsh/aliases_misc.sh
 source $HOME/Personal/dotfiles/zsh/prompt.sh
 source $HOME/Personal/dotfiles/zsh/fzf.sh
