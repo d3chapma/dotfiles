@@ -41,3 +41,22 @@ join-lines() {
     echo -n "${(q)item} "
   done
 }
+
+function g {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+
+bind-git-helper() {
+  local char
+  for c in $@; do
+    eval "fzf-g$c-widget() { local result=\$(fzf-$c | join-lines); zle reset-prompt; LBUFFER+=\$result }"
+    eval "zle -N fzf-g$c-widget"
+    eval "bindkey '^$c' fzf-g$c-widget"
+  done
+}
+bind-git-helper f h b
+unset -f bind-git-helper
