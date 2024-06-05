@@ -3,7 +3,7 @@ HISTFILE=~/.zsh_history
 SAVEHIST=100000
 
 # Various ENV Config
-export EDITOR=zed
+export EDITOR=nvim
 
 # COLOR LS OUTPUT
 export CLICOLOR=1
