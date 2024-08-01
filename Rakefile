@@ -4,8 +4,8 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next unless %w[zshrc gitignore gitconfig].include? file
-
+    next unless %w[zshrc gitignore gitconfig kitty fdignore].include? file
+    
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
         replace_file(file)
@@ -28,6 +28,11 @@ task :install do
     end
   end
 
+  # Handle kitty on its own. Has a special location
+  file = 'kitty.conf'
+  system %Q{rm "$HOME/.config/kitty/#{file}"}
+  puts "linking ~/.config/kitty/#{file}"
+  system %Q{ln -s "$PWD/kitty.conf" "$HOME/.config/kitty/#{file}"}
 end
 
 def replace_file(file)
