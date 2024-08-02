@@ -1,17 +1,14 @@
-launch --title "D3M Development"
-
 new_tab Terminal
-layout stack
 cd ~/code/teldio-operations/d3m
+launch --hold --title "D3M" zed .
 
 new_tab Server
 layout fat
 cd ~/code/teldio-operations/d3m
-launch bin/rails s
-launch bundle exec sidekiq
-launch /opt/homebrew/opt/redis@6.2/bin/redis-server
-launch yarn dev
+launch --title "D3M" --hold bin/rails s
+launch --hold bundle exec sidekiq
+launch --hold /opt/homebrew/opt/redis@6.2/bin/redis-server
+launch --hold yarn dev
 launch docker start dde51da5de7bb4a1f3c0ad83b1d43634d776b6b0563d3b5c28b876967c1253bc
 launch pg_ctl stop -D "/Users/dc/Library/Application Support/Postgres/var-15"
 launch pg_ctl start -D "/Users/dc/Library/Application Support/Postgres/var-14" -p /Applications/Postgres.app/Contents/Versions/14/bin/postgres
-launch zed .

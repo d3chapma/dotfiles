@@ -1,0 +1,3 @@
+new_tab Terminal
+cd ~/code/teldio-operations/teg_external_modules
+launch --hold --title "TEG Modules" zed .

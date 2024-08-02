@@ -1,0 +1,7 @@
+new_tab t8explorer
+cd ~/code/fwdio/t8explorer
+launch --hold --title "t8explorer" zed .
+
+new_tab t8mle
+cd ~/code/fwdio/t8mle
+launch --hold --title "t8mle"

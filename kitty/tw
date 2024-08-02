@@ -1,0 +1,7 @@
+new_tab Terminal
+cd ~/code/teldio-operations/smc_gateway/web
+launch --title "TEG Web"
+
+new_tab Dev Server
+cd ~/code/teldio-operations/smc_gateway/web
+launch --hold --title "TEG Web" npm run dev
