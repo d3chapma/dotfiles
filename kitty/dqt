@@ -1,0 +1,13 @@
+launch --title "DQT Development"
+
+new_tab Terminal
+layout stack
+cd ~/code/teldio-operations/dealer_quote_tool
+
+new_tab Server
+layout stack
+cd ~/code/teldio-operations/dealer_quote_tool
+launch bundle exec rails s
+launch pg_ctl stop -D "/Users/dc/Library/Application Support/Postgres/var-14"
+launch pg_ctl start -D "/Users/dc/Library/Application Support/Postgres/var-15" -p /Applications/Postgres.app/Contents/Versions/15/bin/postgres
+launch zed .
