@@ -12,6 +12,11 @@ export CLICOLOR=1
 # Pinentry for GPG
 export GPG_TTY=$(tty)
 
+# Can edit current command in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^X^e' edit-command-line
+
 source $HOME/code/d3chapma/dotfiles/zsh/asdf.sh
 source $HOME/code/d3chapma/dotfiles/zsh/android.sh
 source $HOME/code/d3chapma/dotfiles/zsh/python.sh
