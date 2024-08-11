@@ -1,6 +1,6 @@
 new_tab Terminal
 cd ~/code/teldio-operations/smc_gateway/web
-launch --title "TEG Web"
+launch --hold --title "TEG Web" code .
 
 new_tab Dev Server
 cd ~/code/teldio-operations/smc_gateway/web
