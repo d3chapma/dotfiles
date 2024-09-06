@@ -12,6 +12,9 @@ export CLICOLOR=1
 # Pinentry for GPG
 export GPG_TTY=$(tty)
 
+# Force emacs mode. If EDITOR contains 'vi', will default to vi mode.
+bindkey -e
+
 # Can edit current command in vim
 autoload -U edit-command-line
 zle -N edit-command-line
