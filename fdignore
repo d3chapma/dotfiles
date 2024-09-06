@@ -3,3 +3,4 @@ anaconda*/
 elasticsearch*/
 Library/
 !.config/
+go/pkg/
