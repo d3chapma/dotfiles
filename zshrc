@@ -29,12 +29,13 @@ source $HOME/code/d3chapma/dotfiles/zsh/aliases_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_vpn.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_misc.sh
 
+source $HOME/code/d3chapma/dotfiles/zsh/functions_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/asdf.sh
 source $HOME/code/d3chapma/dotfiles/zsh/android.sh
 source $HOME/code/d3chapma/dotfiles/zsh/python.sh
 source $HOME/code/d3chapma/dotfiles/zsh/direnv.sh
 source $HOME/code/d3chapma/dotfiles/zsh/go.sh
-source $HOME/code/d3chapma/dotfiles/zsh/functions_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/prompt.sh
 source $HOME/code/d3chapma/dotfiles/zsh/fzf.sh
+source $HOME/code/d3chapma/dotfiles/zsh/fzf-git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/postgres.sh
