@@ -15,11 +15,6 @@ export GPG_TTY=$(tty)
 # Force emacs mode. If EDITOR contains 'vi', will default to vi mode.
 bindkey -e
 
-# Can edit current command in vim
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^X^e' edit-command-line
-
 # Autocompletion
 autoload -Uz compinit && compinit
 
@@ -40,3 +35,4 @@ source $HOME/code/d3chapma/dotfiles/zsh/prompt.sh
 source $HOME/code/d3chapma/dotfiles/zsh/fzf.sh
 source $HOME/code/d3chapma/dotfiles/zsh/fzf-git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/postgres.sh
+source $HOME/code/d3chapma/dotfiles/zsh/keybindings.sh
