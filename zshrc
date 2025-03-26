@@ -28,6 +28,7 @@ source $HOME/code/d3chapma/dotfiles/zsh/aliases_d3m.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_vpn.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_misc.sh
+source $HOME/code/d3chapma/dotfiles/zsh/aliases_kitty.sh
 
 source $HOME/code/d3chapma/dotfiles/zsh/functions_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/asdf.sh
