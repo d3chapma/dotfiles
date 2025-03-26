@@ -1,6 +1,6 @@
 new_tab Terminal
 cd ~/code/teldio-operations/d3m
-launch --hold --title "D3M" zed .
+launch --hold --title "D3M" nvim .
 
 new_tab Server
 layout fat

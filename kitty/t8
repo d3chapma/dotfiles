@@ -1,6 +1,6 @@
 new_tab t8explorer
 cd ~/code/fwdio/t8explorer
-launch --hold --title "t8explorer" zed .
+launch --hold --title "t8explorer" nvim .
 
 new_tab t8mle
 cd ~/code/fwdio/t8mle

@@ -1,6 +1,6 @@
 new_tab Terminal
 cd ~/code/teldio-operations/smc_gateway/web
-launch --hold --title "TEG Web" zed .
+launch --hold --title "TEG Web" nvim .
 
 new_tab Dev Server
 cd ~/code/teldio-operations/smc_gateway/web

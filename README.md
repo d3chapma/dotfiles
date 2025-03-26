@@ -1,20 +1,20 @@
 # Current Applications
 
- - Raycast
- - Zed
- - Arc
- - LastPass
- - Postgres.app
- - Kitty
+- Raycast
+- NVim
+- Arc
+- LastPass
+- Postgres.app
+- Kitty
 
- ## Raycast
+## Raycast
 
- ## Zed
+## NVim
 
- ## Arc
+## Arc
 
- ## LastPass
+## LastPass
 
- ## Postgres.app
+## Postgres.app
 
- ## Kitty
+## Kitty

@@ -17,7 +17,7 @@
 [core]
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
-  editor = zed -w
+  editor = nvim 
 [apply]
   whitespace = nowarn
 

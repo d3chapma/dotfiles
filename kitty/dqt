@@ -1,6 +1,6 @@
 new_tab Terminal
 cd ~/code/teldio-operations/dealer_quote_tool
-launch --hold --title "DQT" zed .
+launch --hold --title "DQT" nvim .
 
 new_tab Server
 cd ~/code/teldio-operations/dealer_quote_tool

@@ -1,7 +1,7 @@
 new_tab Terminal
 layout stack
 cd ~/code/d3chapma/d3chapma.github.io
-launch --hold --title "Blog" zed .
+launch --hold --title "Blog" nvim .
 
 new_tab Server
 layout stack

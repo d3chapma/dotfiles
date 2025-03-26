@@ -1,1 +1,1 @@
-alias dotfiles='zed ~/code/d3chapma/dotfiles'
+alias dotfiles='cd ~/code/d3chapma/dotfiles && nvim .'
