@@ -21,6 +21,7 @@ autoload -Uz compinit && compinit
 # generally aliases should come first
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_d3m.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_git.sh
+source $HOME/code/d3chapma/dotfiles/zsh/aliases_heroku.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_vpn.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_misc.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_kitty.sh
