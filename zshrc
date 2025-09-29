@@ -1,8 +1,3 @@
-HISTSIZE=1000000
-HISTFILE=~/.zsh_history
-SAVEHIST=1000000
-setopt share_history
-
 # Various ENV Config
 export EDITOR=nvim
 
