@@ -15,9 +15,6 @@ export GPG_TTY=$(tty)
 # Force emacs mode. If EDITOR contains 'vi', will default to vi mode.
 bindkey -e
 
-# Autocompletion
-autoload -Uz compinit && compinit
-
 # generally aliases should come first
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_d3m.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_git.sh
@@ -26,6 +23,8 @@ source $HOME/code/d3chapma/dotfiles/zsh/aliases_vpn.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_misc.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_kitty.sh
 
+source $HOME/code/d3chapma/dotfiles/zsh/history.sh
+source $HOME/code/d3chapma/dotfiles/zsh/autocompletion.sh
 source $HOME/code/d3chapma/dotfiles/zsh/functions_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/asdf.sh
 source $HOME/code/d3chapma/dotfiles/zsh/android.sh
