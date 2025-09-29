@@ -6,4 +6,7 @@ new_tab Server
 cd ~/code/teldio-operations/dealer_quote_tool
 launch --title "DQT" --hold bundle exec rails s
 launch pg_ctl stop -D "/Users/dc/Library/Application Support/Postgres/var-14"
+launch pg_ctl stop -D "/Users/dc/Library/Application Support/Postgres/var-16"
+launch pg_ctl stop -D "/Users/dc/Library/Application Support/Postgres/var-17"
+launch pg_ctl stop -D "/Users/dc/Library/Application Support/Postgres/var-18"
 launch pg_ctl start -D "/Users/dc/Library/Application Support/Postgres/var-15" -p /Applications/Postgres.app/Contents/Versions/15/bin/postgres
