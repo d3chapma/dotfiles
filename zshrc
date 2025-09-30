@@ -31,3 +31,4 @@ source $HOME/code/d3chapma/dotfiles/zsh/fzf.sh
 source $HOME/code/d3chapma/dotfiles/zsh/fzf-git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/postgres.sh
 source $HOME/code/d3chapma/dotfiles/zsh/keybindings.sh
+source $HOME/code/d3chapma/dotfiles/zsh/quickcode.sh
