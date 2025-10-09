@@ -8,9 +8,11 @@ export CLICOLOR=1
 export GPG_TTY=$(tty)
 
 # Force emacs mode. If EDITOR contains 'vi', will default to vi mode.
+# Without this, hitting ESC will switch between normal and insert mode. 
 bindkey -e
 
 # generally aliases should come first
+source $HOME/code/d3chapma/dotfiles/zsh/aliases_projects.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_d3m.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_git.sh
 source $HOME/code/d3chapma/dotfiles/zsh/aliases_heroku.sh
